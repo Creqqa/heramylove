@@ -1,0 +1,184 @@
+body {
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/043/253/539/large/johannes-voss-417093-carpet-of-flowers-web.jpg?1636732131") ;
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+    
+
+
+nav {
+    margin:15px auto 0;
+    position:relative;
+    width:800px;
+    height:50px;
+    background-color:#34495e;
+    border-radius:8px;
+    font-size:0;
+    margin-bottom: 15px;
+    }
+nav a {
+    line-height:50px;
+    height:100%;
+    font-size:15px;
+    display:inline-block;
+    position:relative;
+    z-index:1;
+    text-decoration:none;
+    text-transform:uppercase;
+    text-align:center;
+    color:white;
+    cursor:pointer;
+    }
+nav .animation {
+    position:absolute;
+    height:100%;
+    top:0;
+    z-index:0;
+    transition:all .5s ease 0s;
+    border-radius:8px;
+    }
+a:nth-child(1){
+    width:200px;
+    }
+a:nth-child(2){
+    width:200px;
+    }
+a:nth-child(3){
+    width:200px;
+    }
+a:nth-child(4){
+    width:200px;
+    }
+nav .start-about,a:nth-child(1):hover~.animation {
+    width:200px;
+    left:0;
+    background-color:#1abc9c;
+    }
+nav .start-about,a:nth-child(2):hover~.animation {
+    width:200px;
+    left:200px;
+    background-color:#e74c3c;
+    }
+nav .start-about,a:nth-child(3):hover~.animation {
+    width:200px;
+    left:400px;
+    background-color:#3498db;
+    }
+nav .start-about,a:nth-child(4):hover~.animation {
+    width:200px;
+    left:600px;
+    background-color:#9b59b6;
+    }
+    
+span {
+    color:#2BD6B4;
+    }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  position: relative;
+  width: 1160px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin: auto;
+}
+.container .box {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 15px;
+  margin-top: 45px;
+}
+.container:hover .box {
+  transform: rotateY(25deg);
+}
+.container .box:hover ~ .box {
+  transform: rotateY(-25deg);
+}
+.container .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 1;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+}
+.container .box .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .box .imgBx:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,#f00,#000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+.container .box:hover .imgBx:before {
+  opacity: 1;
+}
+.container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.container .box .content h2 {
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+  transition-delay: 0.3s;
+}
+.container .box:hover .content h2 {
+  transform: translateY(0px);
+}
+.container .box .content p {
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+  transition-delay: 0.4s;
+}
+.container .box:hover .content p {
+  transform: translateY(0px);
+}
